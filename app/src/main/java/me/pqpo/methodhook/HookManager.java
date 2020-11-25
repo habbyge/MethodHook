@@ -1,10 +1,9 @@
 package me.pqpo.methodhook;
 
-import android.support.v4.util.Pair;
+import android.util.Pair;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -21,10 +20,11 @@ public final class HookManager {
     }
 
     private static class InstanceHolder {
-        private static HookManager sInstance = new HookManager();
+        private static final HookManager sInstance = new HookManager();
     }
 
-    private Map<Pair<String, String>, MethodHook> methodHookMap = new ConcurrentHashMap<>();
+    private final Map<Pair<String, String>, MethodHook> methodHookMap
+            = new ConcurrentHashMap<>();
 
     public void hookMethod(Method originMethod, Method hookMethod) {
         if (originMethod == null || hookMethod == null) {
@@ -33,7 +33,9 @@ public final class HookManager {
 //        if (!Modifier.isStatic(hookMethod.getModifiers())) {
 //            throw new IllegalArgumentException("hook method must be static");
 //        }
-        Pair<String, String> key = Pair.create(hookMethod.getDeclaringClass().getName(), hookMethod.getName());
+        Pair<String, String> key = Pair.create(hookMethod.getDeclaringClass().getName(),
+                                               hookMethod.getName());
+
         if (methodHookMap.containsKey(key)) {
             MethodHook methodHook = methodHookMap.get(key);
             methodHook.restore();
@@ -58,5 +60,4 @@ public final class HookManager {
             }
         }
     }
-
 }

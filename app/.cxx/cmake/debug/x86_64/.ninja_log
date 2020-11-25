@@ -1,0 +1,3 @@
+# ninja log v5
+0	71	1606288088	CMakeFiles/method-hook-lib.dir/src/main/cpp/method-hook-lib.cpp.o	e3fa3261c69f1306
+71	149	1606288088	../../../../build/intermediates/cmake/debug/obj/x86_64/libmethod-hook-lib.so	5aa4a3bceeaf521

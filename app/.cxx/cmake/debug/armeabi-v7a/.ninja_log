@@ -1,0 +1,3 @@
+# ninja log v5
+0	150	1606288087	CMakeFiles/method-hook-lib.dir/src/main/cpp/method-hook-lib.cpp.o	2b528ba15830ab47
+150	219	1606288087	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libmethod-hook-lib.so	4ae0e3ec326bd968

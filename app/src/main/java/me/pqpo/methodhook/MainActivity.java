@@ -1,16 +1,16 @@
 package me.pqpo.methodhook;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +32,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Method srcMethod = MainActivity.class.getDeclaredMethod("showToast", String.class);
-                    Method destMethod = MainActivity.class.getDeclaredMethod("showHookToast", String.class);
+                    Method srcMethod = MainActivity.class.getDeclaredMethod(
+                            "showToast", String.class);
+
+                    Method destMethod = MainActivity.class.getDeclaredMethod(
+                            "showHookToast", String.class);
+
                     HookManager.get().hookMethod(srcMethod, destMethod);
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();
@@ -42,28 +46,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnRestore.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                //hook 失败
-//                try {
-//                    HookManager.get().hookMethod(Toast.class.getDeclaredMethod("show"), MainActivity.class.getDeclaredMethod("Toast_show"));
-//                } catch (NoSuchMethodException e) {
-//                    e.printStackTrace();
-//                }
             }
-
         });
-
-
-        }
+    }
 
     public void showToast(String msg) {
+        Log.i(TAG, "showToast: " + msg);
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
         toast.show();
     }
 
     public void showHookToast(String msg) {
-        Log.d("MainActivity", "msg:" + msg);
+        Log.i(TAG, "showHookToast: " + msg);
         HookManager.get().callOrigin(this, msg + "(Hook)");
     }
 

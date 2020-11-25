@@ -1,0 +1,33 @@
+{
+  "buildFiles": [
+    "/Users/habbyge/MethodHook/app/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/habbyge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/habbyge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "method-hook-lib-Debug-x86": {
+      "artifactName": "method-hook-lib",
+      "buildCommandComponents": [
+        "/Users/habbyge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86",
+        "method-hook-lib"
+      ],
+      "abi": "x86",
+      "output": "/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libmethod-hook-lib.so",
+      "runtimeFiles": []
+    }
+  }
+}

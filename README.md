@@ -45,11 +45,11 @@ extern void __attribute__ ((visibility ("hidden"))) art_replaceMethod(
     if (apilevel > 23) {
         replace_7_0(env, src, dest);
     } else if (apilevel > 22) {
-	replace_6_0(env, src, dest);
+	    replace_6_0(env, src, dest);
     } else if (apilevel > 21) {
-	replace_5_1(env, src, dest);
+	    replace_5_1(env, src, dest);
     } else if (apilevel > 19) {
-	replace_5_0(env, src, dest);
+	    replace_5_0(env, src, dest);
     }else{
         replace_4_4(env, src, dest);
     }
@@ -213,8 +213,8 @@ public class MethodHook {
 
 ```c++ 
 
-methodHookClassInfo.m1 = env -> GetStaticMethodID(classEvaluateUtil, "m1", "()V");
-methodHookClassInfo.m2 = env -> GetStaticMethodID(classEvaluateUtil, "m2", "()V");
+methodHookClassInfo.m1 = env->GetStaticMethodID(classEvaluateUtil, "m1", "()V");
+methodHookClassInfo.m2 = env->GetStaticMethodID(classEvaluateUtil, "m2", "()V");
 methodHookClassInfo.methodSize = reinterpret_cast(methodHookClassInfo.m2) - reinterpret_cast(methodHookClassInfo.m1);
 
 ```
@@ -234,8 +234,8 @@ public static void m2(){}
 ```c++ 
 
 static long methodHook(JNIEnv* env, jclass type, jobject srcMethodObj, jobject destMethodObj) {
-    void* srcMethod = reinterpret_cast<void*>(env -> FromReflectedMethod(srcMethodObj));
-    void* destMethod = reinterpret_cast<void*>(env -> FromReflectedMethod(destMethodObj));
+    void* srcMethod = reinterpret_cast<void*>(env->FromReflectedMethod(srcMethodObj));
+    void* destMethod = reinterpret_cast<void*>(env->FromReflectedMethod(destMethodObj));
     int* backupMethod = new int[methodHookClassInfo.methodSize];
     memcpy(backupMethod, srcMethod, methodHookClassInfo.methodSize);
     memcpy(srcMethod, destMethod, methodHookClassInfo.methodSize);
@@ -244,7 +244,7 @@ static long methodHook(JNIEnv* env, jclass type, jobject srcMethodObj, jobject d
 
 ```
 
-这里的 srcMethodObj，destMethodObj 对应 Java 层的 Method 类， 通过 env -> FromReflectedMethod 获取方法的 jmethodID, 实际上就获取了方法位于 native 层 ArtMethod 结构体的指针地址。
+这里的 srcMethodObj，destMethodObj 对应 Java 层的 Method 类， 通过 env->FromReflectedMethod 获取方法的 jmethodID, 实际上就获取了方法位于 native 层 ArtMethod 结构体的指针地址。
 一开始已经计算出 ArtMethod 结构体的大小并保存在了 methodHookClassInfo.methodSize 中。再新构造一个 int 数组来备份原方法。使用 memcpy 将原函数 ArtMethod 内存拷贝至备份的数组中，然后使用 memcpy 将目标函数 ArtMethod 结构体拷贝至原函数结构体指针起始位置完成结构体替换。最后将用于备份的 int 数组的指针强制类型转换为 long 类型返回给 Java 层以供后续恢复之用。
 
 下面是方法恢复的函数：  
@@ -254,7 +254,7 @@ static long methodHook(JNIEnv* env, jclass type, jobject srcMethodObj, jobject d
 
 static jobject methodRestore(JNIEnv* env, jclass type, jobject srcMethod, jlong methodPtr) {
     int* backupMethod = reinterpret_cast<int*>(methodPtr);
-    void* artMethodSrc = reinterpret_cast<void*>(env -> FromReflectedMethod(srcMethod));
+    void* artMethodSrc = reinterpret_cast<void*>(env->FromReflectedMethod(srcMethod));
     memcpy(artMethodSrc, backupMethod, methodHookClassInfo.methodSize);
     delete []backupMethod;
     return srcMethod;

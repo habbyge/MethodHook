@@ -9,18 +9,21 @@ import java.lang.reflect.Method;
 
 public class MethodHook {
 
-    public static void m1(){}
-    public static void m2(){}
+    public static void m1() {
+    }
+    public static void m2() {
+    }
 
-    private Method srcMethod;
-    private Method hookMethod;
+    private final Method srcMethod;
+    private final Method hookMethod;
 
-    private long backupMethodPtr;
+    private long backupMethodPtr; // 原方法地址
 
     public MethodHook(Method src, Method dest) {
         srcMethod = src;
-        hookMethod = dest;
         srcMethod.setAccessible(true);
+
+        hookMethod = dest;
         hookMethod.setAccessible(true);
     }
 
@@ -37,7 +40,9 @@ public class MethodHook {
         }
     }
 
-    public void callOrigin(Object receiver, Object... args) throws InvocationTargetException, IllegalAccessException {
+    public void callOrigin(Object receiver, Object... args) throws
+            InvocationTargetException, IllegalAccessException {
+
         if (backupMethodPtr != 0) {
             restore();
             srcMethod.invoke(receiver, args);
