@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "me.pqpo.artmethodhook"
 
-        minSdkVersion 14
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -15,6 +15,7 @@ android {
         externalNativeBuild {
             cmake {
                 cppFlags "-std=c++11 -frtti -fexceptions"
+                version "3.6.0"
             }
         }
     }
@@ -26,9 +27,12 @@ android {
     }
     externalNativeBuild {
         cmake {
-            path "CMakeLists.txt"
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.6.0"
         }
     }
+
+    ndkVersion '21.3.6528147'
 }
 
 dependencies {

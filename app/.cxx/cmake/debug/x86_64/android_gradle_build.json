@@ -1,40 +1,38 @@
+
 {
-  "stringTable": {},
-  "buildFiles": [
-    "/Users/habbyge/MethodHook/app/CMakeLists.txt"
-  ],
-  "cleanCommandsComponents": [
-    [
-      "/Users/habbyge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
-      "-C",
-      "/Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86_64",
-      "clean"
-    ]
-  ],
-  "buildTargetsCommandComponents": [
-    "/Users/habbyge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
-    "-C",
-    "/Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86_64",
-    "{LIST_OF_TARGETS_TO_BUILD}"
-  ],
-  "libraries": {
-    "method-hook-lib-Debug-x86_64": {
-      "buildCommandComponents": [
-        "/Users/habbyge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
-        "-C",
-        "/Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86_64",
-        "method-hook-lib"
-      ],
-      "buildType": "debug",
-      "abi": "x86_64",
-      "artifactName": "method-hook-lib",
-      "output": "/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86_64/libmethod-hook-lib.so",
-      "runtimeFiles": []
-    }
-  },
-  "toolchains": {},
-  "cFileExtensions": [],
-  "cppFileExtensions": [
-    "cpp"
-  ]
+	"buildFiles" : [ "/Users/habbyge/MethodHook/app/src/main/cpp/CMakeLists.txt" ],
+	"cleanCommands" : 
+	[
+		"/Users/habbyge/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86_64 --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"method-hook-lib-Debug-x86_64" : 
+		{
+			"abi" : "x86_64",
+			"artifactName" : "method-hook-lib",
+			"buildCommand" : "/Users/habbyge/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86_64 --target method-hook-lib",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=x86_64-none-linux-android21 --gcc-toolchain=/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dmethod_hook_lib_EXPORTS -I/Users/habbyge/MethodHook/app/src/main/cpp/util/log.h  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/habbyge/MethodHook/app/src/main/cpp/method-hook-lib.cpp",
+					"workingDirectory" : "/Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86_64"
+				}
+			],
+			"output" : "/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86_64/libmethod-hook-lib.so",
+			"toolchain" : "9012020421525711866"
+		}
+	},
+	"toolchains" : 
+	{
+		"9012020421525711866" : 
+		{
+			"cCompilerExecutable" : "/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+		}
+	}
 }

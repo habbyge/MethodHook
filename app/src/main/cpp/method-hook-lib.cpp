@@ -1,9 +1,8 @@
-#include <jni.h>
-#include <string.h>
+#include "util/log.h"
 
-//
-// Created by qiulinmin on 7/7/17.
-//
+/**
+ * Created by habbyge on 2020/11/24.
+ */
 static const char* kClassMethodHookChar = "me/pqpo/methodhook/MethodHook";
 
 static struct {
@@ -20,6 +19,8 @@ static jlong methodHook(JNIEnv* env, jclass type,
     void* srcMethod = reinterpret_cast<void*>(env->FromReflectedMethod(srcMethodObj));
     void* destMethod = reinterpret_cast<void*>(env->FromReflectedMethod(destMethodObj));
 
+    LOGV("methodHook: start !!!");
+
     int* backupMethod = new int[methodHookClassInfo.methodSize];
     // 备份原方法
     memcpy(backupMethod, srcMethod, methodHookClassInfo.methodSize);
@@ -32,10 +33,15 @@ static jlong methodHook(JNIEnv* env, jclass type,
 static jobject methodRestore(JNIEnv* env, jclass type,
                              jobject srcMethod, jlong methodPtr) {
 
-    int* backupMethod = reinterpret_cast<int*>(methodPtr);
+    LOGV("methodRestore: start !!!");
+
+    void* backupMethod = reinterpret_cast<void*>(methodPtr);
     void* artMethodSrc = reinterpret_cast<void*>(env->FromReflectedMethod(srcMethod));
     memcpy(artMethodSrc, backupMethod, methodHookClassInfo.methodSize);
-    delete[]backupMethod;
+    delete[] reinterpret_cast<int*>(backupMethod);
+
+    LOGV("methodRestore: Success !!!");
+
     return srcMethod;
 }
 
@@ -65,8 +71,9 @@ extern "C" JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
     methodHookClassInfo.m1 = env->GetStaticMethodID(classEvaluateUtil, "m1", "()V");
     methodHookClassInfo.m2 = env->GetStaticMethodID(classEvaluateUtil, "m2", "()V");
 
-    methodHookClassInfo.methodSize = reinterpret_cast<size_t>(methodHookClassInfo.m2)
-                                     - reinterpret_cast<size_t>(methodHookClassInfo.m1);
+    methodHookClassInfo.methodSize = 
+            reinterpret_cast<size_t>(methodHookClassInfo.m2) - 
+            reinterpret_cast<size_t>(methodHookClassInfo.m1);
 
     return JNI_VERSION_1_4;
 }

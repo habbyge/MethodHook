@@ -1,0 +1,2 @@
+[1/2] Building CXX object CMakeFiles/method-hook-lib.dir/method-hook-lib.cpp.o
+[2/2] Linking CXX shared library /Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86_64/libmethod-hook-lib.so

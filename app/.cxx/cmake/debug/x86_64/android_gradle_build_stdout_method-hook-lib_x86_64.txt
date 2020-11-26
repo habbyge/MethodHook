@@ -1,2 +1,0 @@
-ninja: Entering directory `/Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86_64'
-ninja: no work to do.

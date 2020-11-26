@@ -1,0 +1,3 @@
+/Users/habbyge/MethodHook/CMakeFiles/rebuild_cache.dir
+/Users/habbyge/MethodHook/CMakeFiles/edit_cache.dir
+/Users/habbyge/MethodHook/CMakeFiles/method-hook-lib.dir

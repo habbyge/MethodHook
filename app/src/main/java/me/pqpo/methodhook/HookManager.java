@@ -8,9 +8,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Created by qiulinmin on 7/10/17.
+ * Created by habbyge on 2020/11/25.
  */
-
 public final class HookManager {
 
     private HookManager(){}

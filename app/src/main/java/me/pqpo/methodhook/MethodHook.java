@@ -1,13 +1,15 @@
 package me.pqpo.methodhook;
 
+import android.util.Log;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * Created by qiulinmin on 7/7/17.
+ * Created by habbyge on 2020/11/25.
  */
-
 public class MethodHook {
+    private static final String TAG = "iWatch.MethodHook";
 
     public static void m1() {
     }
@@ -35,8 +37,10 @@ public class MethodHook {
 
     public void restore() {
         if (backupMethodPtr != 0) {
+            Log.i(TAG, "restore  begin");
             restore_native(srcMethod, backupMethodPtr);
-            backupMethodPtr = 0;
+            Log.i(TAG, "restore  success");
+            backupMethodPtr = 0L;
         }
     }
 

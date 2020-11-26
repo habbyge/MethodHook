@@ -1,30 +1,14 @@
 {
   "buildFiles": [
-    "/Users/habbyge/MethodHook/app/CMakeLists.txt"
+    "/Users/habbyge/MethodHook/app/src/main/cpp/CMakeLists.txt"
   ],
-  "cleanCommandsComponents": [
-    [
-      "/Users/habbyge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
-      "-C",
-      "/Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86_64",
-      "clean"
-    ]
-  ],
-  "buildTargetsCommandComponents": [
-    "/Users/habbyge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
-    "-C",
-    "/Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86_64",
-    "{LIST_OF_TARGETS_TO_BUILD}"
+  "cleanCommands": [
+    "/Users/habbyge/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86_64 --target clean"
   ],
   "libraries": {
     "method-hook-lib-Debug-x86_64": {
       "artifactName": "method-hook-lib",
-      "buildCommandComponents": [
-        "/Users/habbyge/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
-        "-C",
-        "/Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86_64",
-        "method-hook-lib"
-      ],
+      "buildCommand": "/Users/habbyge/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86_64 --target method-hook-lib",
       "abi": "x86_64",
       "output": "/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86_64/libmethod-hook-lib.so",
       "runtimeFiles": []
