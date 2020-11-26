@@ -130,44 +130,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named method-hook-lib
+# Target rules for targets named iWatch
 
 # Build rule for target.
-method-hook-lib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 method-hook-lib
-.PHONY : method-hook-lib
+iWatch: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 iWatch
+.PHONY : iWatch
 
 # fast build rule for target.
-method-hook-lib/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/method-hook-lib.dir/build.make CMakeFiles/method-hook-lib.dir/build
-.PHONY : method-hook-lib/fast
+iWatch/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/iWatch.dir/build.make CMakeFiles/iWatch.dir/build
+.PHONY : iWatch/fast
 
-method-hook-lib.o: method-hook-lib.cpp.o
+i_watch.o: i_watch.cpp.o
 
-.PHONY : method-hook-lib.o
+.PHONY : i_watch.o
 
 # target to build an object file
-method-hook-lib.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/method-hook-lib.dir/build.make CMakeFiles/method-hook-lib.dir/method-hook-lib.cpp.o
-.PHONY : method-hook-lib.cpp.o
+i_watch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/iWatch.dir/build.make CMakeFiles/iWatch.dir/i_watch.cpp.o
+.PHONY : i_watch.cpp.o
 
-method-hook-lib.i: method-hook-lib.cpp.i
+i_watch.i: i_watch.cpp.i
 
-.PHONY : method-hook-lib.i
+.PHONY : i_watch.i
 
 # target to preprocess a source file
-method-hook-lib.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/method-hook-lib.dir/build.make CMakeFiles/method-hook-lib.dir/method-hook-lib.cpp.i
-.PHONY : method-hook-lib.cpp.i
+i_watch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/iWatch.dir/build.make CMakeFiles/iWatch.dir/i_watch.cpp.i
+.PHONY : i_watch.cpp.i
 
-method-hook-lib.s: method-hook-lib.cpp.s
+i_watch.s: i_watch.cpp.s
 
-.PHONY : method-hook-lib.s
+.PHONY : i_watch.s
 
 # target to generate assembly for a file
-method-hook-lib.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/method-hook-lib.dir/build.make CMakeFiles/method-hook-lib.dir/method-hook-lib.cpp.s
-.PHONY : method-hook-lib.cpp.s
+i_watch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/iWatch.dir/build.make CMakeFiles/iWatch.dir/i_watch.cpp.s
+.PHONY : i_watch.cpp.s
 
 # Help Target
 help:
@@ -177,10 +177,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... method-hook-lib"
-	@echo "... method-hook-lib.o"
-	@echo "... method-hook-lib.i"
-	@echo "... method-hook-lib.s"
+	@echo "... iWatch"
+	@echo "... i_watch.o"
+	@echo "... i_watch.i"
+	@echo "... i_watch.s"
 .PHONY : help
 
 

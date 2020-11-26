@@ -1,1 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -dynamiclib -Wl,-headerpad_max_install_names -o libmethod-hook-lib.dylib -install_name @rpath/libmethod-hook-lib.dylib CMakeFiles/method-hook-lib.dir/src/main/cpp/method-hook-lib.cpp.o  -llog-lib-NOTFOUND 

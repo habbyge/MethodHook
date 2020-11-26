@@ -1,7 +1,7 @@
 [
 {
   "directory": "/Users/habbyge/MethodHook/app/.cxx/cmake/debug/armeabi-v7a",
-  "command": "/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++  --target=armv7-none-linux-androideabi21 --gcc-toolchain=/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dmethod_hook_lib_EXPORTS -I/Users/habbyge/MethodHook/app/src/main/cpp/util/log.h  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -std=c++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/method-hook-lib.dir/method-hook-lib.cpp.o -c /Users/habbyge/MethodHook/app/src/main/cpp/method-hook-lib.cpp",
-  "file": "/Users/habbyge/MethodHook/app/src/main/cpp/method-hook-lib.cpp"
+  "command": "/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++  --target=armv7-none-linux-androideabi21 --gcc-toolchain=/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -DiWatch_EXPORTS -I/Users/habbyge/MethodHook/app/src/main/cpp/util/log.h  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -std=c++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/iWatch.dir/i_watch.cpp.o -c /Users/habbyge/MethodHook/app/src/main/cpp/i_watch.cpp",
+  "file": "/Users/habbyge/MethodHook/app/src/main/cpp/i_watch.cpp"
 }
 ]

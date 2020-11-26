@@ -49,40 +49,40 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
   restat = 1
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
-# Object build statements for SHARED_LIBRARY target method-hook-lib
+# Object build statements for SHARED_LIBRARY target iWatch
 
-build CMakeFiles/method-hook-lib.dir/method-hook-lib.cpp.o: CXX_COMPILER__method-hook-lib /Users/habbyge/MethodHook/app/src/main/cpp/method-hook-lib.cpp
-  DEFINES = -Dmethod_hook_lib_EXPORTS
-  DEP_FILE = CMakeFiles/method-hook-lib.dir/method-hook-lib.cpp.o.d
+build CMakeFiles/iWatch.dir/i_watch.cpp.o: CXX_COMPILER__iWatch /Users/habbyge/MethodHook/app/src/main/cpp/i_watch.cpp
+  DEFINES = -DiWatch_EXPORTS
+  DEP_FILE = CMakeFiles/iWatch.dir/i_watch.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I/Users/habbyge/MethodHook/app/src/main/cpp/util/log.h
-  IN_ABS = /Users/habbyge/MethodHook/app/src/main/cpp/method-hook-lib.cpp
-  OBJECT_DIR = CMakeFiles/method-hook-lib.dir
-  OBJECT_FILE_DIR = CMakeFiles/method-hook-lib.dir
+  IN_ABS = /Users/habbyge/MethodHook/app/src/main/cpp/i_watch.cpp
+  OBJECT_DIR = CMakeFiles/iWatch.dir
+  OBJECT_FILE_DIR = CMakeFiles/iWatch.dir
 
 # =============================================================================
-# Link build statements for SHARED_LIBRARY target method-hook-lib
+# Link build statements for SHARED_LIBRARY target iWatch
 
 
 #############################################
-# Link the shared library /Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libmethod-hook-lib.so
+# Link the shared library /Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libiWatch.so
 
-build /Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libmethod-hook-lib.so: CXX_SHARED_LIBRARY_LINKER__method-hook-lib CMakeFiles/method-hook-lib.dir/method-hook-lib.cpp.o | /Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/21/liblog.so
+build /Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libiWatch.so: CXX_SHARED_LIBRARY_LINKER__iWatch CMakeFiles/iWatch.dir/i_watch.cpp.o | /Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/21/liblog.so
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++11 -frtti -fexceptions -O0 -fno-limit-debug-info
   LINK_FLAGS = -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments
   LINK_LIBRARIES = -llog -latomic -lm
-  OBJECT_DIR = CMakeFiles/method-hook-lib.dir
+  OBJECT_DIR = CMakeFiles/iWatch.dir
   POST_BUILD = :
   PRE_LINK = :
-  SONAME = libmethod-hook-lib.so
+  SONAME = libiWatch.so
   SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = /Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libmethod-hook-lib.so
-  TARGET_PDB = method-hook-lib.so.dbg
+  TARGET_FILE = /Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libiWatch.so
+  TARGET_PDB = iWatch.so.dbg
 # =============================================================================
 # Target aliases.
 
-build libmethod-hook-lib.so: phony /Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libmethod-hook-lib.so
-build method-hook-lib: phony /Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libmethod-hook-lib.so
+build iWatch: phony /Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libiWatch.so
+build libiWatch.so: phony /Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libiWatch.so
 # =============================================================================
 # Folder targets.
 
@@ -94,7 +94,7 @@ build method-hook-lib: phony /Users/habbyge/MethodHook/app/build/intermediates/c
 #############################################
 # The main all target.
 
-build all: phony /Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libmethod-hook-lib.so
+build all: phony /Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libiWatch.so
 
 #############################################
 # Make the all target the default.

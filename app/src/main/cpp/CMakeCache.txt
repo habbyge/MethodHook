@@ -213,14 +213,14 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Value Computed by CMake
 iWatch_BINARY_DIR:STATIC=/Users/habbyge/MethodHook/app/src/main/cpp
 
+//Dependencies for the target
+iWatch_LIB_DEPENDS:STATIC=general;/Users/habbyge/Library/Android/sdk/ndk-bundle/platforms/android-29/arch-arm/usr/lib/liblog.so;
+
 //Value Computed by CMake
 iWatch_SOURCE_DIR:STATIC=/Users/habbyge/MethodHook/app/src/main/cpp
 
 //Path to a library.
 log-lib:FILEPATH=/Users/habbyge/Library/Android/sdk/ndk-bundle/platforms/android-29/arch-arm/usr/lib/liblog.so
-
-//Dependencies for the target
-method-hook-lib_LIB_DEPENDS:STATIC=general;/Users/habbyge/Library/Android/sdk/ndk-bundle/platforms/android-29/arch-arm/usr/lib/liblog.so;
 
 
 ########################

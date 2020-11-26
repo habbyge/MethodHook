@@ -69,6 +69,6 @@ public class MethodHook {
     private static native long hookField(Field src, Field dst);
 
     static {
-        System.loadLibrary("method-hook-lib");
+        System.loadLibrary("iWatch");
     }
 }

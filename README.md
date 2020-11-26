@@ -200,7 +200,7 @@ public class MethodHook {
     private static native Method restore_native(Method src, long methodPtr);
 
     static {
-        System.loadLibrary("method-hook-lib");
+        System.loadLibrary("iWatch");
     }
 
 }

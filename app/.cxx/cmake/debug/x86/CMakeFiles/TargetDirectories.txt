@@ -1,3 +1,3 @@
 /Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86/CMakeFiles/edit_cache.dir
 /Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86/CMakeFiles/rebuild_cache.dir
-/Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86/CMakeFiles/method-hook-lib.dir
+/Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86/CMakeFiles/iWatch.dir

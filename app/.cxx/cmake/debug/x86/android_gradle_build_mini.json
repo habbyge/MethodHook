@@ -6,11 +6,11 @@
     "/Users/habbyge/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86 --target clean"
   ],
   "libraries": {
-    "method-hook-lib-Debug-x86": {
-      "artifactName": "method-hook-lib",
-      "buildCommand": "/Users/habbyge/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86 --target method-hook-lib",
+    "iWatch-Debug-x86": {
+      "artifactName": "iWatch",
+      "buildCommand": "/Users/habbyge/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86 --target iWatch",
       "abi": "x86",
-      "output": "/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libmethod-hook-lib.so",
+      "output": "/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libiWatch.so",
       "runtimeFiles": []
     }
   }

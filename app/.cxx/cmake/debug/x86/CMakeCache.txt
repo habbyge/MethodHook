@@ -204,6 +204,9 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Value Computed by CMake
 iWatch_BINARY_DIR:STATIC=/Users/habbyge/MethodHook/app/.cxx/cmake/debug/x86
 
+//Dependencies for the target
+iWatch_LIB_DEPENDS:STATIC=general;/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/21/liblog.so;
+
 //Value Computed by CMake
 iWatch_SOURCE_DIR:STATIC=/Users/habbyge/MethodHook/app/src/main/cpp
 

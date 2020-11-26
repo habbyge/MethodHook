@@ -8,22 +8,22 @@
 	"cppFileExtensions" : [ "cpp" ],
 	"libraries" : 
 	{
-		"method-hook-lib-Debug-armeabi-v7a" : 
+		"iWatch-Debug-armeabi-v7a" : 
 		{
 			"abi" : "armeabi-v7a",
-			"artifactName" : "method-hook-lib",
-			"buildCommand" : "/Users/habbyge/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/habbyge/MethodHook/app/.cxx/cmake/debug/armeabi-v7a --target method-hook-lib",
+			"artifactName" : "iWatch",
+			"buildCommand" : "/Users/habbyge/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/habbyge/MethodHook/app/.cxx/cmake/debug/armeabi-v7a --target iWatch",
 			"buildType" : "debug",
 			"files" : 
 			[
 				
 				{
-					"flags" : "  --target=armv7-none-linux-androideabi21 --gcc-toolchain=/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dmethod_hook_lib_EXPORTS -I/Users/habbyge/MethodHook/app/src/main/cpp/util/log.h  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -std=c++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
-					"src" : "/Users/habbyge/MethodHook/app/src/main/cpp/method-hook-lib.cpp",
+					"flags" : "  --target=armv7-none-linux-androideabi21 --gcc-toolchain=/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/habbyge/Library/Android/sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -DiWatch_EXPORTS -I/Users/habbyge/MethodHook/app/src/main/cpp/util/log.h  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -std=c++11 -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/habbyge/MethodHook/app/src/main/cpp/i_watch.cpp",
 					"workingDirectory" : "/Users/habbyge/MethodHook/app/.cxx/cmake/debug/armeabi-v7a"
 				}
 			],
-			"output" : "/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libmethod-hook-lib.so",
+			"output" : "/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libiWatch.so",
 			"toolchain" : "9012020421525711866"
 		}
 	},

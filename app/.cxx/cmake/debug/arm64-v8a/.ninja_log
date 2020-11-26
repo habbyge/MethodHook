@@ -7,3 +7,7 @@
 74	174	0	/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/arm64-v8a/libmethod-hook-lib.so	a80a52ac1ba15196
 0	108	0	CMakeFiles/method-hook-lib.dir/method-hook-lib.cpp.o	397692fe178de3c2
 108	265	0	/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/arm64-v8a/libmethod-hook-lib.so	a80a52ac1ba15196
+0	89	0	CMakeFiles/iWatch.dir/i_watch.cpp.o	552db51b30711dfa
+89	215	0	/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/arm64-v8a/libiWatch.so	af538c3109fcd70c
+0	97	0	CMakeFiles/iWatch.dir/i_watch.cpp.o	552db51b30711dfa
+97	236	0	/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/arm64-v8a/libiWatch.so	af538c3109fcd70c
