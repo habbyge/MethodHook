@@ -2,6 +2,7 @@ package me.pqpo.methodhook;
 
 import android.util.Pair;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -25,6 +26,10 @@ public final class HookManager {
     private final Map<Pair<String, String>, MethodHook> methodHookMap
             = new ConcurrentHashMap<>();
 
+    public void hookField(Field src, Field dst) {
+        MethodHook.hookField2(src, dst);
+    }
+
     public void hookMethod(Method originMethod, Method hookMethod) {
         if (originMethod == null || hookMethod == null) {
             throw new IllegalArgumentException("argument cannot be null");
@@ -37,7 +42,9 @@ public final class HookManager {
 
         if (methodHookMap.containsKey(key)) {
             MethodHook methodHook = methodHookMap.get(key);
-            methodHook.restore();
+            if (methodHook != null) {
+                methodHook.restore();
+            }
         }
         MethodHook methodHook = new MethodHook(originMethod, hookMethod);
         methodHookMap.put(key, methodHook);

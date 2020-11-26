@@ -7,29 +7,39 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class MainActivity extends Activity {
     private static final String TAG = "iWatch.MainActivity";
+
+    // 字符被
+    private static int ix = 10;
+    private static int ix_HOOK = 10000;
+
+    private String iStr = "iWatch";
+    private String iStr_HOOK = "iWatch.HOOK";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnClick = (Button) findViewById(R.id.click);
-        Button btnHook = (Button) findViewById(R.id.hook);
-        Button btnRestore = (Button) findViewById(R.id.restore);
+        Button btnClick = findViewById(R.id.click);
+        Button btnHookMethod = findViewById(R.id.method);
+        Button btnHookField = findViewById(R.id.field);
 
         btnClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                showToast("Hello!");
                 printf("I love My family: Wifi Daught, Son !");
+                Log.d(TAG, "iStr = " + iStr);
+                Log.d(TAG, "iX = " + ix);
             }
         });
 
-        btnHook.setOnClickListener(new View.OnClickListener() {
+        btnHookMethod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
@@ -44,10 +54,25 @@ public class MainActivity extends Activity {
             }
         });
 
-        btnRestore.setOnClickListener(new View.OnClickListener() {
+        btnHookField.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                try {
+                    Field srcField = MainActivity.class.getDeclaredField("iStr");
+                    srcField.setAccessible(true);
+                    Field dstField = MainActivity.class.getDeclaredField("iStr_HOOK");
+                    dstField.setAccessible(true);
+                    HookManager.get().hookField(srcField, dstField);
+
+                    Field srcField1 = MainActivity.class.getDeclaredField("ix");
+                    srcField1.setAccessible(true);
+                    Field dstField1 = MainActivity.class.getDeclaredField("ix_HOOK");
+                    dstField1.setAccessible(true);
+                    HookManager.get().hookField(srcField1, dstField1);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -63,11 +88,6 @@ public class MainActivity extends Activity {
         Log.i(TAG, "printf-Hook: 2");
         Log.i(TAG, "printf-Hook: 3");
         Log.i(TAG, "printf-Hook: 4");
-        Log.i(TAG, "printf-Hook: 5");
-        Log.i(TAG, "printf-Hook: 6");
-        Log.i(TAG, "printf-Hook: 7");
-        Log.i(TAG, "printf-Hook: 8");
-        Log.i(TAG, "printf-Hook: 9");
 
         int ix = 10000;
         Log.i(TAG, "printf-Hook: " + ix + 0);
@@ -75,11 +95,6 @@ public class MainActivity extends Activity {
         Log.i(TAG, "printf-Hook: " + ix + 2);
         Log.i(TAG, "printf-Hook: " + ix + 3);
         Log.i(TAG, "printf-Hook: " + ix + 4);
-        Log.i(TAG, "printf-Hook: " + ix + 5);
-        Log.i(TAG, "printf-Hook: " + ix + 6);
-        Log.i(TAG, "printf-Hook: " + ix + 7);
-        Log.i(TAG, "printf-Hook: " + ix + 8);
-        Log.i(TAG, "printf-Hook: " + ix + 9);
 
         HookManager.get().callOrigin(this, "I love Mali");
     }

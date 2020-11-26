@@ -2,6 +2,7 @@ package me.pqpo.methodhook;
 
 import android.util.Log;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -15,6 +16,9 @@ public class MethodHook {
     }
     public static void m2() {
     }
+
+    public static Object field1;
+    public static Object field2;
 
     private final Method srcMethod;
     private final Method hookMethod;
@@ -31,14 +35,14 @@ public class MethodHook {
 
     public void hook() {
         if (backupMethodPtr == 0) {
-            backupMethodPtr = hook_native(srcMethod, hookMethod);
+            backupMethodPtr = hookMethod(srcMethod, hookMethod);
         }
     }
 
     public void restore() {
         if (backupMethodPtr != 0) {
             Log.i(TAG, "restore  begin");
-            restore_native(srcMethod, backupMethodPtr);
+            restoreMethod(srcMethod, backupMethodPtr);
             Log.i(TAG, "restore  success");
             backupMethodPtr = 0L;
         }
@@ -56,11 +60,15 @@ public class MethodHook {
         }
     }
 
-    private static native long hook_native(Method src, Method dest);
-    private static native Method restore_native(Method src, long methodPtr);
+    public static void hookField2(Field src, Field dst) {
+        hookField(src, dst);
+    }
+
+    private static native long hookMethod(Method src, Method dst);
+    private static native Method restoreMethod(Method src, long methodPtr);
+    private static native long hookField(Field src, Field dst);
 
     static {
         System.loadLibrary("method-hook-lib");
     }
-
 }

@@ -1,3 +1,9 @@
 # ninja log v5
 0	85	0	CMakeFiles/method-hook-lib.dir/method-hook-lib.cpp.o	5e411d0a38a408f6
 86	195	0	/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libmethod-hook-lib.so	70ddd05c257d6b98
+1	83	0	CMakeFiles/method-hook-lib.dir/method-hook-lib.cpp.o	5e411d0a38a408f6
+83	171	0	/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libmethod-hook-lib.so	70ddd05c257d6b98
+1	73	0	CMakeFiles/method-hook-lib.dir/method-hook-lib.cpp.o	5e411d0a38a408f6
+73	115	0	/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libmethod-hook-lib.so	70ddd05c257d6b98
+1	122	0	CMakeFiles/method-hook-lib.dir/method-hook-lib.cpp.o	5e411d0a38a408f6
+122	203	0	/Users/habbyge/MethodHook/app/build/intermediates/cmake/debug/obj/x86/libmethod-hook-lib.so	70ddd05c257d6b98

@@ -12,15 +12,15 @@
         android:text="click"/>
 
     <Button
-        android:id="@+id/hook"
+        android:id="@+id/method"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="hook"/>
+        android:text="hook method"/>
 
     <Button
-        android:id="@+id/restore"
+        android:id="@+id/field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="hook toast"/>
+        android:text="hook feild"/>
 
 </LinearLayout>
